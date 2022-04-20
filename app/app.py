@@ -75,4 +75,4 @@ def symbol_metrics(symbols: str):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=os.getenv("HTTP_SERVER_PORT", 9798))
+    app.run(host="0.0.0.0", port=os.getenv("HTTP_SERVER_PORT", 9696))
