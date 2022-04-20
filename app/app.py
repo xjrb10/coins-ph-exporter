@@ -33,7 +33,7 @@ def scrape_symbols(symbols: List[str]) -> Dict[str, Tuple[float, float]]:
     data = requests.get(API_BASE_URL).json()
 
     def scrape_symbol(symbol: str):
-        if symbol in cache and cache[symbol]["expiry"] < time():
+        if symbol in cache and cache[symbol]["expiry"] > time():
             return cache[symbol]["bid"], cache[symbol]["ask"]
 
         for i in data.get("markets"):
